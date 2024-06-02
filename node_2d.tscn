@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bogdomv81brgk"]
+
+[ext_resource type="Texture2D" uid="uid://t1xff1bt8uke" path="res://icon.svg" id="1_hq0vo"]
+[ext_resource type="Script" path="res://player.gd" id="2_6264r"]
+
+[node name="World" type="Node2D"]
+
+[node name="player" type="Sprite2D" parent="."]
+position = Vector2(609, 291)
+texture = ExtResource("1_hq0vo")
+script = ExtResource("2_6264r")
