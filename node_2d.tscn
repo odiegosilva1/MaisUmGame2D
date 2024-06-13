@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bogdomv81brgk"]
 
-[ext_resource type="Script" path="res://gamemaneger.gd" id="1_b5sc4"]
+[ext_resource type="Script" path="res://Scripts/gamemaneger.gd" id="1_b5sc4"]
 [ext_resource type="PackedScene" uid="uid://buy2v8kfiba8n" path="res://Objects/regular-box.tscn" id="1_lp1na"]
 [ext_resource type="PackedScene" uid="uid://cch4dw4gwxcu8" path="res://Objects/box-bouncy.tscn" id="2_c2lll"]
 
@@ -11,6 +11,7 @@ size = Vector2(1152.25, 50)
 
 [node name="GameManeger" type="Node" parent="."]
 script = ExtResource("1_b5sc4")
+object_templates = Array[PackedScene]([ExtResource("1_lp1na"), ExtResource("2_c2lll")])
 
 [node name="bg" type="ColorRect" parent="."]
 layout_direction = 1
@@ -33,9 +34,6 @@ color = Color(0.0862745, 0.662745, 0.0627451, 1)
 position = Vector2(577, 622)
 shape = SubResource("RectangleShape2D_iajuy")
 debug_color = Color(0.932186, 0.187028, 0.461508, 0.42)
-
-[node name="RigidBody2D4" parent="." instance=ExtResource("1_lp1na")]
-position = Vector2(-33, -188)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("1_lp1na")]
 position = Vector2(242, 349)
