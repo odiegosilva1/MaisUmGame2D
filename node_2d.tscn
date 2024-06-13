@@ -1,22 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bogdomv81brgk"]
+[gd_scene load_steps=3 format=3 uid="uid://bogdomv81brgk"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6bv5i"]
-light_mode = 2
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x8c1g"]
-friction = 0.0
-bounce = 1.0
-absorbent = true
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bdglv"]
-light_mode = 1
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_86pa7"]
-size = Vector2(54, 55)
+[ext_resource type="PackedScene" uid="uid://buy2v8kfiba8n" path="res://Objects/regular-box.tscn" id="1_lp1na"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iajuy"]
 size = Vector2(1152.25, 50)
@@ -25,9 +9,10 @@ size = Vector2(1152.25, 50)
 
 [node name="bg" type="ColorRect" parent="."]
 layout_direction = 1
-offset_left = -5.0
-offset_right = 1150.0
-offset_bottom = 650.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 1152.0
+offset_bottom = 647.0
 auto_translate = false
 localize_numeral_system = false
 color = Color(0.537255, 1, 1, 1)
@@ -39,30 +24,21 @@ offset_right = 1151.0
 offset_bottom = 650.0
 color = Color(0.0862745, 0.662745, 0.0627451, 1)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-material = SubResource("CanvasItemMaterial_6bv5i")
-mass = 0.01
-physics_material_override = SubResource("PhysicsMaterial_x8c1g")
-gravity_scale = 2.026
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-material = SubResource("CanvasItemMaterial_bdglv")
-position = Vector2(588, 233.5)
-rotation = 0.509636
-shape = SubResource("RectangleShape2D_86pa7")
-debug_color = Color(0.976471, 0.0431373, 0.168627, 0.419608)
-
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
-offset_left = 561.0
-offset_top = 205.0
-offset_right = 613.0
-offset_bottom = 261.0
-color = Color(0.835294, 0.235294, 0.290196, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="Ground-block" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground-block"]
 position = Vector2(577, 622)
 shape = SubResource("RectangleShape2D_iajuy")
 debug_color = Color(0.932186, 0.187028, 0.461508, 0.42)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("1_lp1na")]
+position = Vector2(-343, -43)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("1_lp1na")]
+position = Vector2(-32, 57)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("1_lp1na")]
+position = Vector2(303, 38)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("1_lp1na")]
+position = Vector2(-33, -188)
