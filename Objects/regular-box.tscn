@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://buy2v8kfiba8n"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6bv5i"]
+light_mode = 2
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wmobp"]
+friction = 0.0
+bounce = 0.8
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bdglv"]
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86pa7"]
+size = Vector2(34, 33.3333)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+material = SubResource("CanvasItemMaterial_6bv5i")
+scale = Vector2(3, 3)
+mass = 8.0
+physics_material_override = SubResource("PhysicsMaterial_wmobp")
+gravity_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+material = SubResource("CanvasItemMaterial_bdglv")
+position = Vector2(1.66667, 3)
+shape = SubResource("RectangleShape2D_86pa7")
+debug_color = Color(0.944407, 0.0359254, 0.160878, 0.419608)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -14.3333
+offset_top = -12.0
+offset_right = 0.666666
+offset_bottom = 3.0
+scale = Vector2(2, 2)
+color = Color(1, 0, 1, 1)
+metadata/_edit_use_anchors_ = true

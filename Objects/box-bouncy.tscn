@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cch4dw4gwxcu8"]
+
+[ext_resource type="PackedScene" uid="uid://buy2v8kfiba8n" path="res://Objects/regular-box.tscn" id="1_eok2r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rmjm1"]
+
+[node name="RigidBody2D" instance=ExtResource("1_eok2r")]
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_rmjm1")
+gravity_scale = 1.0
+
+[node name="ColorRect" parent="." index="1"]
+color = Color(0.184314, 0.243137, 1, 1)
