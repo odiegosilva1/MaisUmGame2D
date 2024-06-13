@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bogdomv81brgk"]
+[gd_scene load_steps=5 format=3 uid="uid://bogdomv81brgk"]
 
+[ext_resource type="Script" path="res://gamemaneger.gd" id="1_b5sc4"]
 [ext_resource type="PackedScene" uid="uid://buy2v8kfiba8n" path="res://Objects/regular-box.tscn" id="1_lp1na"]
+[ext_resource type="PackedScene" uid="uid://cch4dw4gwxcu8" path="res://Objects/box-bouncy.tscn" id="2_c2lll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iajuy"]
 size = Vector2(1152.25, 50)
 
 [node name="World" type="Node2D"]
 
+[node name="GameManeger" type="Node" parent="."]
+script = ExtResource("1_b5sc4")
+
 [node name="bg" type="ColorRect" parent="."]
 layout_direction = 1
-offset_left = -3.0
-offset_top = -3.0
-offset_right = 1152.0
-offset_bottom = 647.0
+offset_right = 1155.0
+offset_bottom = 650.0
 auto_translate = false
 localize_numeral_system = false
 color = Color(0.537255, 1, 1, 1)
@@ -31,14 +34,38 @@ position = Vector2(577, 622)
 shape = SubResource("RectangleShape2D_iajuy")
 debug_color = Color(0.932186, 0.187028, 0.461508, 0.42)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("1_lp1na")]
-position = Vector2(-343, -43)
-
-[node name="RigidBody2D2" parent="." instance=ExtResource("1_lp1na")]
-position = Vector2(-32, 57)
-
-[node name="RigidBody2D3" parent="." instance=ExtResource("1_lp1na")]
-position = Vector2(303, 38)
-
 [node name="RigidBody2D4" parent="." instance=ExtResource("1_lp1na")]
 position = Vector2(-33, -188)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("1_lp1na")]
+position = Vector2(242, 349)
+
+[node name="RigidBody2D6" parent="." instance=ExtResource("1_lp1na")]
+position = Vector2(1032, 87)
+
+[node name="RigidBody2D8" parent="." instance=ExtResource("2_c2lll")]
+position = Vector2(573, 364)
+
+[node name="RigidBody2D9" parent="." instance=ExtResource("2_c2lll")]
+position = Vector2(777, 104)
+
+[node name="RigidBody2D10" parent="." instance=ExtResource("2_c2lll")]
+position = Vector2(413, 459)
+
+[node name="RigidBody2D11" parent="." instance=ExtResource("2_c2lll")]
+position = Vector2(86, 453)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("2_c2lll")]
+position = Vector2(178, 51)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("2_c2lll")]
+position = Vector2(465, 168)
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("2_c2lll")]
+position = Vector2(879, 404)
+
+[node name="RigidBody2D7" parent="." instance=ExtResource("1_lp1na")]
+position = Vector2(1058, 468)
+
+[node name="RigidBody2D12" parent="." instance=ExtResource("1_lp1na")]
+position = Vector2(728, 289)
